@@ -1,0 +1,96 @@
+//Question 1.Given an array of integers, write a Java program to find and print all the duplicate elements.
+
+package mockPrograms;
+
+public class ArrayDuplicate {
+
+	public static void main(String[] args) {
+		int[] arr = new int[] { 1, 2, 3, 4, 5, 1, 2, 4, 9, 7, 6, 8 };
+		int i, j;
+		for (i = 0; i < arr.length; i++) {
+			for (j = i + 1; j < arr.length; j++) {
+				if (arr[i] == arr[j]) {
+					System.out.println("Duplicate elements are- " + arr[j]);
+				}
+			}
+		}
+
+	}
+
+}
+//OUTPUT//
+Duplicate elements are- 1
+Duplicate elements are- 2
+Duplicate elements are- 4
+
+
+//Question 2.Write a Java function to check if two strings are anagrams of each other.
+
+package mockPrograms;
+
+import java.util.Arrays;
+
+public class Anagrams {
+
+	public static void main(String[] args) {
+		String str1 = "Heart";
+		String str2 = "Earth";
+
+		str1 = str1.toLowerCase();
+		str2 = str2.toLowerCase();
+
+		if (str1.length() == str2.length()) {
+			char[] charArray1 = str1.toCharArray();
+			char[] charArray2 = str2.toCharArray();
+
+			Arrays.sort(charArray1);
+			Arrays.sort(charArray2);
+
+			boolean result = Arrays.equals(charArray1, charArray2);
+
+			if (result) {
+				System.out.println(str1 + " and " + str2 + " are anagrams");
+			} else {
+				System.out.println(str1 + " and" + str2 + " are not anagrams");
+			}
+		} else {
+			System.out.println("not anagrams");
+		}
+
+	}
+
+}
+//OUTPUT//
+heart and earth are anagrams
+
+Question 3 Write a Java program to print a right-angled triangle of stars. The number of rows should be taken as input.
+
+package mockPrograms;
+
+import java.util.Scanner;
+
+public class TrianglePattern {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the no. of rows");
+		int a = sc.nextInt();
+		for (int i = 1; i <= a; i++) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+		sc.close();
+	}
+
+}
+//OUTPUT//
+Enter the no. of rows
+6
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * * *
